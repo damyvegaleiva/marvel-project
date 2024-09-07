@@ -35,7 +35,7 @@ const NavList: React.FC = () => {
           <motion.div
             initial="initial"
             whileHover="hovered"
-            className={`relative block overflow-hidden w-[150px] text-center border-black bg-black text-white font-bold rounded-md bg-blue-primary hover:cursor-pointer border-2 `}
+            className={`relative block overflow-hidden w-[150px] text-center border-black bg-marvelRed text-white font-bold rounded-md bg-blue-primary hover:cursor-pointer border-2 `}
           >
             <Link
               to={item.path}
@@ -44,13 +44,13 @@ const NavList: React.FC = () => {
               <motion.button
                 variants={buttonVariants}
                 transition={{ bounce: false }}
-                className="bg-[url('/button-bg.webp')] bg-center bg-cover w-full py-2"
+                className="bg-[url('/button-bg.webp')] bg-center bg-cover w-full py-2 text-black text-shadow-white-outline"
               >
                 {item.name.toUpperCase()}
               </motion.button>
 
               <motion.button
-                className="absolute inset-0"
+                className="absolute inset-0 text-white text-shadow-black-outline"
                 variants={shadowVariants}
               >
                 {item.name.toUpperCase()}

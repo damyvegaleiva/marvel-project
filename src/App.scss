@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 body {
-  background: black;
+  background: #000000;
 }
 
 *,
 *:before,
 *:after {
-  position: relative;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

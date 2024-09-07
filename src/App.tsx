@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import HomeContainer from "./containers/HomeContainer";
-import CharacterContainer from "./containers/CharacterContainer";
 import HeaderContainer from "./containers/HeaderContainer";
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomeContainer />} />
-          <Route path="/character/:name" element={<CharacterContainer />} />
         </Routes>
       </BrowserRouter>
     </div>

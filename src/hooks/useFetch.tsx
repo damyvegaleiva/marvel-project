@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MarvelApiResponse } from "../types/types";
+import { BASE_URL } from "../config/config";
 
 type TFetchReturn<T> = {
   data: MarvelApiResponse<T> | null;
@@ -17,7 +18,7 @@ const useFetch = <T,>(url: string): TFetchReturn<T> => {
 
     const fetchData = async (): Promise<void> => {
       try {
-        const request: Response = await fetch(url);
+        const request: Response = await fetch(BASE_URL + url);
 
         if (!request.ok) {
           throw new Error(`Error ${request.status}: ${request.statusText}`);

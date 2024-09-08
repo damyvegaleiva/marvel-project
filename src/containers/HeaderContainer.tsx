@@ -8,7 +8,7 @@ const HeaderContainer: React.FC = () => {
   return (
     <header
       className={`bg-[url('/header-bg.webp')] bg-cover bg-center pt-5 ${
-        currentPath === "/" && "mt-14"
+        currentPath === "/" && "mt-6"
       }`}
     >
       <img

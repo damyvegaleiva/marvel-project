@@ -8,13 +8,13 @@ const HeaderContainer: React.FC = () => {
   return (
     <header
       className={`bg-[url('/header-bg.webp')] bg-cover bg-center pt-5 ${
-        currentPath === "/" && "mt-6"
+        currentPath === "/" && "mt-4 lg:mt-6"
       }`}
     >
       <img
         src="/marvel-logo.jpg"
         alt="Marvel Logo"
-        className="w-[800px] m-auto shadow-boxHeader hover:cursor-pointer border-2 border-black mb-5"
+        className="w-[300px] md:w-[500px] lg:w-[800px] m-auto shadow-boxHeader hover:cursor-pointer border-2 border-black mb-5"
         onClick={() => navigate("/")}
       />
 

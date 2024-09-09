@@ -6,6 +6,10 @@ type NavItem = {
   path: string;
 };
 
+type TNavListProps = {
+  isOpen: boolean;
+};
+
 const listItems: NavItem[] = [
   {
     name: "Characters",
@@ -25,17 +29,20 @@ const shadowVariants = {
   hovered: { y: 0 },
 };
 
-const NavList: React.FC = () => {
+const NavList: React.FC<TNavListProps> = ({ isOpen }) => {
   const { pathname: currentPath } = useLocation();
+  const hideToggle = !isOpen && "translate-x-[200%]";
 
   return (
-    <ul className="flex justify-center items-center py-2 text-[1rem] gap-10">
+    <ul
+      className={`${hideToggle} flex absolute lg:static top-full flex-col justify-center items-center lg:flex-row lg:py-2 text-[1rem] lg:gap-10 w-full lg:bg-white bg-marvelRed lg:translate-x-0 duration-1000`}
+    >
       {listItems.map((item, index) => (
-        <li key={index}>
+        <li key={index} className="w-full lg:w-[150px] text-center font-bold">
           <motion.div
             initial="initial"
             whileHover="hovered"
-            className={`relative block overflow-hidden w-[150px] text-center border-black bg-marvelRed text-white font-bold rounded-md bg-blue-primary hover:cursor-pointer border-2 `}
+            className="relative overflow-hidden text-center lg:border-black lg:border-2 lg:rounded-md lg:hover:cursor-pointer bg-marvelRed"
           >
             <Link
               to={item.path}
@@ -44,13 +51,13 @@ const NavList: React.FC = () => {
               <motion.button
                 variants={buttonVariants}
                 transition={{ bounce: false }}
-                className="bg-[url('/button-bg.webp')] bg-center bg-cover w-full py-2 text-black text-shadow-white-outline"
+                className="lg:bg-[url('/button-bg.webp')] bg-center bg-cover w-full py-2 text-white lg:text-black lg:text-shadow-white-outline text-shadow-black-outline"
               >
                 {item.name.toUpperCase()}
               </motion.button>
 
               <motion.button
-                className="absolute inset-0 text-white text-shadow-black-outline"
+                className="absolute inset-0 text-white"
                 variants={shadowVariants}
               >
                 {item.name.toUpperCase()}

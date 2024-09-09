@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import NavList from "./NavList";
 import BurgerButton from "./BurgerButton";
@@ -7,9 +7,9 @@ const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { pathname } = useLocation();
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const handleClick = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
   useEffect(() => {
     setIsOpen(false);
@@ -23,7 +23,6 @@ const NavBar: React.FC = () => {
       aria-label="Main Navigation"
     >
       <BurgerButton handleClick={handleClick} isOpen={isOpen} />
-
       <NavList isOpen={isOpen} />
     </nav>
   );

@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import { MarvelApiResponse } from "../types/types";
 import { BASE_URL } from "../config/config";
 
-type TFetchReturn<T> = {
-  data: MarvelApiResponse<T> | null;
-  isLoading: boolean;
-  error: Error | null;
-};
-
-const useFetch = <T,>(url: string): TFetchReturn<T> => {
+const useFetch = <T,>(API_REQUEST: string) => {
   const [data, setData] = useState<MarvelApiResponse<T> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
@@ -18,7 +12,7 @@ const useFetch = <T,>(url: string): TFetchReturn<T> => {
 
     const fetchData = async (): Promise<void> => {
       try {
-        const request: Response = await fetch(BASE_URL + url);
+        const request: Response = await fetch(BASE_URL + API_REQUEST);
 
         if (!request.ok) {
           throw new Error(`Error ${request.status}: ${request.statusText}`);
@@ -37,7 +31,7 @@ const useFetch = <T,>(url: string): TFetchReturn<T> => {
     };
 
     fetchData();
-  }, [url]);
+  }, [API_REQUEST]);
 
   return { data, isLoading, error };
 };

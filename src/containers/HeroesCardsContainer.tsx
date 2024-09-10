@@ -6,7 +6,7 @@ import Loader from "../components/Loader";
 import SectionTitle from "../components/SectionTitle";
 import HeroCard from "../components/HeroCard";
 
-const HeroesCardContainer = () => {
+const HeroesCardsContainer = () => {
   const { data, isLoading } = useFetch<Character>(HEROES_ALL_URL);
   const heroesData = data?.data.results;
 
@@ -25,4 +25,4 @@ const HeroesCardContainer = () => {
   );
 };
 
-export default HeroesCardContainer;
+export default HeroesCardsContainer;

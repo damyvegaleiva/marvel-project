@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 
 const HeaderContainer: React.FC = () => {
   const navigate = useNavigate();

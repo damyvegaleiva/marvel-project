@@ -1,9 +1,11 @@
+@import "./styles/_loader.module.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background: #000000;
+  background: black;
 }
 
 *,

@@ -26,7 +26,7 @@ const useFetch = <T,>(API_REQUEST: string) => {
       } finally {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1500);
+        }, 3000);
       }
     };
 

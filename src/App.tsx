@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.scss";
-import HomeContainer from "./containers/HomeContainer";
 import HeaderContainer from "./containers/HeaderContainer";
-import CharacterDataContainer from "./containers/CharacterDataContainer";
+import HomeContainer from "./containers/HomeContainer";
+import HeroesCardContainer from "./containers/HeroesCardContainer";
 
 function App() {
   return (
@@ -12,7 +11,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomeContainer />} />
-          <Route path="/characters" element={<CharacterDataContainer />} />
+          <Route path="/characters" element={<HeroesCardContainer />} />
+          <Route path="/characters/:id" />
         </Routes>
       </BrowserRouter>
     </div>

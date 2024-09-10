@@ -1,27 +1,19 @@
-import { motion } from "framer-motion";
 import { Character } from "../types/types";
-import { HEROES_ALL_URL } from "../config/config";
-import useFetch from "../hooks/useFetch";
-import Loader from "../components/Loader";
-import SectionTitle from "../components/SectionTitle";
 import HeroCard from "../components/HeroCard";
 
-const HeroesCardsContainer = () => {
-  const { data, isLoading } = useFetch<Character>(HEROES_ALL_URL);
-  const heroesData = data?.data.results;
+type THeroesCardsContainerProps = {
+  heroesData: Character[] | undefined;
+};
 
-  if (isLoading) return <Loader />;
-
+const HeroesCardsContainer: React.FC<THeroesCardsContainerProps> = ({
+  heroesData,
+}) => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <SectionTitle title="Heroes" />
-
-      <HeroCard heroesData={heroesData} />
-    </motion.section>
+    <section className="grid gap-10 mt-10 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] lg:mx-auto lg:w-[80%]">
+      {heroesData?.map((hero) => (
+        <HeroCard key={hero.id} hero={hero} />
+      ))}
+    </section>
   );
 };
 

@@ -6,7 +6,7 @@ type TNavListProps = {
 };
 
 const listItems = [
-  { name: "Heroes", path: "/characters" },
+  { name: "Heroes", path: "/heroes" },
   { name: "Comics", path: "/comics" },
   { name: "Creators", path: "/creators" },
 ];

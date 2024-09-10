@@ -8,13 +8,15 @@ const HeroesCardContainer = () => {
   const { data, isLoading } = useFetch<Character>(HEROES_ALL_URL);
   const heroesData = data?.data.results;
 
+  if (isLoading) return <Loader />;
+
   return (
     <section className="h-full">
       <h1 className="w-full py-2 mt-10 text-3xl text-center text-white lg:text-5xl text-shadow-black-outline bg-marvelRed">
         HEROES
       </h1>
 
-      {isLoading ? <Loader /> : <HeroCard heroesData={heroesData} />}
+      <HeroCard heroesData={heroesData} />
     </section>
   );
 };

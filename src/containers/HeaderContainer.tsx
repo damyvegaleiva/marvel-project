@@ -1,16 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 const HeaderContainer: React.FC = () => {
   const navigate = useNavigate();
-  const { pathname: currentPath } = useLocation();
 
   return (
-    <header
-      className={`bg-[url('/header-bg.webp')] bg-cover bg-center pt-5 ${
-        currentPath === "/" && "mt-4 lg:mt-6"
-      }`}
-    >
+    <header className="bg-[url('/header-bg.webp')] bg-cover bg-center pt-5">
       <img
         src="/marvel-logo.jpg"
         alt="Marvel Logo"

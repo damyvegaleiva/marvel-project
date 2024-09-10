@@ -6,14 +6,22 @@ export default {
       colors: {
         marvelRed: "#ED1923",
       },
+
       boxShadow: {
         boxHeader: "rgb(38, 57, 77) 0px 10px 30px -10px",
       },
+
       textShadow: {
         whiteOutline:
           "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff",
         blackOutline:
           "2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000",
+      },
+
+      fontFamily: {
+        marvel: ['"Marvel"', "sans-serif"],
+        luckiestGuy: ['"Luckiest Guy"', "cursive"],
+        bangers: ['"Bangers"', "system-ui"],
       },
     },
   },
@@ -27,6 +35,19 @@ export default {
         ".text-shadow-black-outline": {
           textShadow:
             "2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000",
+        },
+        ".text-shadow-red-outline": {
+          textShadow:
+            "2px 0 #ED1923, -2px 0 #ED1923, 0 2px #ED1923, 0 -2px #ED1923, 1px 1px #ED1923, -1px -1px #ED1923, 1px -1px #ED1923, -1px 1px #ED1923",
+        },
+        ".text-stroke-black": {
+          "-webkit-text-stroke": "10px black",
+        },
+        ".text-stroke-black-thin": {
+          "-webkit-text-stroke": "5px black",
+        },
+        ".text-stroke-black-extra-thin": {
+          "-webkit-text-stroke": "3px black",
         },
       });
     },

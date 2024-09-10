@@ -16,7 +16,7 @@ const HeroCard: React.FC<THeroCardProps> = ({ heroesData }) => {
       {heroesData?.map((hero) => (
         <article
           key={hero.id}
-          className="flex flex-col w-[90%] mx-auto lg:w-auto items-center justify-center gap-6 px-16 text-center border-2 rounded-lg bg-marvelRed py-4"
+          className="flex flex-col w-[90%] mx-auto lg:w-auto items-center justify-center gap-6 px-16 text-center border-4 rounded-lg bg-[url('./card-bg.jpg')] bg-cover bg-center py-4 border-black"
         >
           <h2 className="text-3xl text-white text-shadow-black-outline ">
             {hero.name}

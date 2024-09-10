@@ -1,11 +1,12 @@
-@import "./styles/_loader.module.scss";
+@import "./styles/fonts";
+@import "./styles/loader.module";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background: black;
+  background: #aa0d15;
 }
 
 *,
@@ -33,4 +34,17 @@ h4 {
 
 p {
   text-wrap: pretty;
+}
+
+.underline-gradient::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  bottom: 20%;
+  translate: -50% -50%;
+  width: 75%;
+  height: 3px; /* Adjust the height as needed */
+  background: linear-gradient(to right, transparent, rgb(255, 255, 255));
+  z-index: -1; /* Ensure it sits behind the text */
 }

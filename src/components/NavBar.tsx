@@ -17,12 +17,13 @@ const NavBar: React.FC = () => {
 
   return (
     <nav
-      className={`relative flex transition-all duration-1000 flex-col items-center justify-center w-full border-2 border-black lg:border-0 lg:border-t-2 ${
-        isOpen ? "bg-marvelRed" : "bg-white"
+      className={`relative flex transition-all duration-1000 flex-col items-center justify-center w-full border-2 border-black lg:border-0 lg:border-y-2 shadow-boxHeader ${
+        isOpen ? "bg-marvelRed" : "bg-[#fafafa]"
       }`}
       aria-label="Main Navigation"
     >
       <BurgerButton handleClick={handleClick} isOpen={isOpen} />
+
       <NavList isOpen={isOpen} />
     </nav>
   );

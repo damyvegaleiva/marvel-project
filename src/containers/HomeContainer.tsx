@@ -1,9 +1,11 @@
-import SearchBox from "../components/SearchBox";
+// import SearchBox from "../components/SearchBox";
+import SectionTitle from "../components/SectionTitle";
 
 const HomeContainer = () => {
   return (
     <main>
-      <SearchBox />
+      <SectionTitle title="Home" />
+      {/* <SearchBox /> */}
     </main>
   );
 };

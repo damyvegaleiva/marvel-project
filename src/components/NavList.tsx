@@ -27,7 +27,7 @@ const NavList: React.FC<TNavListProps> = ({ isOpen }) => {
 
   return (
     <ul
-      className={`flex absolute lg:static top-full flex-col justify-center items-center lg:flex-row lg:py-2 text-[1rem] lg:gap-10 w-full lg:bg-white bg-marvelRed lg:translate-x-0 transition-transform duration-1000 ${hideToggleClass}`}
+      className={`w-full flex absolute lg:static top-full flex-col justify-center items-center bg-marvelRed lg:flex-row lg:py-2 text-[1rem] lg:gap-10 lg:bg-[#fafafa] lg:translate-x-0 transition-transform duration-1000 ${hideToggleClass}`}
     >
       {listItems.map((item, index) => (
         <li key={index} className="w-full lg:w-[150px] text-center font-bold">

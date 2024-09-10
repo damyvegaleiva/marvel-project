@@ -1,5 +1,5 @@
 import { Character } from "../types/types";
-import HeroCard from "../components/HeroCard";
+import HeroCard from "../components/HeroCard/HeroCard";
 
 type THeroesCardsContainerProps = {
   heroesData: Character[] | undefined;

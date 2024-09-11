@@ -4,7 +4,7 @@ type THeroTitleProps = {
 
 const HeroName: React.FC<THeroTitleProps> = ({ heroName }) => {
   return (
-    <h2 className="text-[1.75rem] text-white text-shadow-black-outline font-luckiestGuy ">
+    <h2 className="text-[1.75rem] w-full text-white text-shadow-black-outline font-luckiestGuy">
       {heroName}
     </h2>
   );

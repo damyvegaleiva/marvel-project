@@ -13,7 +13,7 @@ const HeroImage: React.FC<THeroImageProps> = ({
     <img
       src={
         thumbnailUrl.includes("not_available")
-          ? "./not-image-hero.jpg"
+          ? "/not-image-hero.jpg"
           : `${thumbnailUrl}.${thumbnailExt}`
       }
       alt={`${heroName} image`}

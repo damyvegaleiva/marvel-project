@@ -12,7 +12,7 @@ const SectionTitle: React.FC<TSectionTitleProps> = ({ title }) => {
         {title.toUpperCase()}
       </h1>
 
-      <span className=" text-[4rem] block text-transparent bg-contain font-bangers lg:text-[9rem] px-5 bg-clip-text text-stroke-black-extra-thin bg-[url('./comic-bg.jpg')] text-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] underline-gradient">
+      <span className=" text-[4rem] block text-transparent bg-contain font-bangers lg:text-[9rem] px-5 bg-clip-text text-stroke-black-extra-thin bg-[url('/comic-bg.jpg')] text-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] underline-gradient">
         {title.toUpperCase()}
       </span>
     </div>

@@ -9,7 +9,7 @@ const HeroesCardsContainer: React.FC<THeroesCardsContainerProps> = ({
   heroesData,
 }) => {
   return (
-    <section className="grid gap-10 mt-10 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] lg:mx-auto lg:w-[80%]">
+    <section className="grid gap-10 mt-10 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] lg:mx-auto lg:w-[60%]">
       {heroesData?.map((hero) => (
         <HeroCard key={hero.id} hero={hero} />
       ))}

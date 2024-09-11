@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HeaderContainer from "./containers/HeaderContainer";
 import HomeContainer from "./containers/HomeContainer";
 import HeroesContainer from "./containers/HeroesContainer";
+import FooterContainer from "./containers/FooterContainer";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route path="/heroes" element={<HeroesContainer />} />
           <Route path="/heroes/:id" />
         </Routes>
+
+        <FooterContainer />
       </BrowserRouter>
     </div>
   );

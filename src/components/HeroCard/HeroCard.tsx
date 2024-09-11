@@ -35,9 +35,9 @@ const HeroCard: React.FC<THeroCardType> = ({ hero }) => {
       tiltMaxAngleX={10}
       tiltMaxAngleY={10}
       transitionSpeed={3000}
-      tiltEnable={isTiltEnabled} // Control tilt based on screen size
+      tiltEnable={isTiltEnabled}
     >
-      <article className="flex flex-col items-center justify-center w-[75%] mx-auto gap-6 text-center border-4 rounded-lg bg-[url('/card-bg.jpg')] bg-cover bg-center py-4 border-black lg:w-full">
+      <article className="flex flex-col items-center justify-center w-[75%] mx-auto gap-6 text-center border-[3.5px] rounded-lg bg-[url('/card-bg.jpg')] bg-cover bg-center py-4 border-black lg:w-full lg:hover:border-white lg:duration-700 lg:border-[2.5px]">
         <HeroName heroName={hero.name} />
         <HeroImage
           heroName={hero.name}

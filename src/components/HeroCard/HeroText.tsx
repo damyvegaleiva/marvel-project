@@ -8,7 +8,7 @@ const truncateText = (text: string, maxLength: number): string => {
 
 const HeroText: React.FC<THeroTextProps> = ({ heroDescription }) => {
   return (
-    <p className="flex-grow text-lg text-white">
+    <p className="flex-grow text-xl text-white font-marvel font-[700] italic">
       {truncateText(
         heroDescription || "This hero doesn't like descriptions.",
         50

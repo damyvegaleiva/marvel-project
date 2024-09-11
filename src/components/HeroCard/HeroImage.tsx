@@ -17,7 +17,7 @@ const HeroImage: React.FC<THeroImageProps> = ({
           : `${thumbnailUrl}.${thumbnailExt}`
       }
       alt={`${heroName} image`}
-      className="w-[150px] h-[150px] border-2 rounded-[60%]"
+      className="w-[150px] h-[150px] border-[3px] rounded-[60%]"
     />
   );
 };

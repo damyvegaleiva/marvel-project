@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 type TNavListProps = {
@@ -36,7 +36,7 @@ const NavList: React.FC<TNavListProps> = ({ isOpen }) => {
             whileHover="hovered"
             className="relative overflow-hidden text-center lg:border-black lg:border-2 lg:rounded-md lg:hover:cursor-pointer bg-marvelRed"
           >
-            <Link
+            <NavLink
               to={item.path}
               aria-current={currentPath === item.path ? "page" : undefined}
             >
@@ -54,7 +54,7 @@ const NavList: React.FC<TNavListProps> = ({ isOpen }) => {
               >
                 {item.name.toUpperCase()}
               </motion.button>
-            </Link>
+            </NavLink>
           </motion.div>
         </li>
       ))}

@@ -1,10 +1,15 @@
+import { motion } from "framer-motion";
+
 type TSectionTitleProps = {
   title: string;
 };
 
 const SectionTitle: React.FC<TSectionTitleProps> = ({ title }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 200 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.75 }}
       className="relative -mt-[75px] -mb-[100px] lg:-mt-[225px] lg:-mb-[250px] xl:-mt-[325px] xl:-mb-[350px] 2xl:-mt-[425px] 2xl:-mb-[450px] -z-10 overflow-hidden"
       role="banner"
     >
@@ -15,7 +20,7 @@ const SectionTitle: React.FC<TSectionTitleProps> = ({ title }) => {
       <span className=" text-[4rem] block text-transparent bg-contain font-bangers lg:text-[9rem] px-5 bg-clip-text text-stroke-black-extra-thin bg-[url('/comic-bg.jpg')] text-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] underline-gradient">
         {title.toUpperCase()}
       </span>
-    </div>
+    </motion.div>
   );
 };
 

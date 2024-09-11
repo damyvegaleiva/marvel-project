@@ -8,7 +8,7 @@ const HeroButton: React.FC<THeroButtonProps> = ({ heroId }) => {
   const navigate = useNavigate();
   return (
     <button
-      className="px-10 py-1 text-white border-2"
+      className="px-10 py-1 text-xs font-bold tracking-wide text-white duration-500 border-2 border-white rounded-lg font-marvel bg-marvelRed lg:border-black lg:hover:border-white"
       onClick={() => navigate(`/characters/${heroId}`)}
     >
       MORE

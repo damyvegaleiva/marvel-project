@@ -10,17 +10,15 @@ const HeroesContainer = () => {
   const { data, isLoading } = useFetch<Character>(HEROES_ALL_URL);
   const heroesData = data?.data.results;
 
-  if (isLoading) return <Loader />;
-
   return (
-    <motion.main
-      initial={{ opacity: 0, y: 200 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <motion.main>
       <SectionTitle title="Heroes" />
 
-      <HeroesCardsContainer heroesData={heroesData} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <HeroesCardsContainer heroesData={heroesData} />
+      )}
     </motion.main>
   );
 };

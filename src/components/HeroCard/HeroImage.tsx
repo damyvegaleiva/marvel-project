@@ -12,7 +12,7 @@ const HeroImage: React.FC<THeroImageProps> = ({
   return (
     <img
       src={
-        thumbnailUrl.includes("not_available")
+        thumbnailUrl.includes("not_available") || thumbnailExt === "gif"
           ? "/not-image-hero.jpg"
           : `${thumbnailUrl}.${thumbnailExt}`
       }

@@ -11,13 +11,14 @@ const HeroesContainer = () => {
   const heroesData = data?.data.results;
 
   return (
-    <motion.main>
-      <SectionTitle title="Heroes" />
-
+    <motion.main className="mb-20">
       {isLoading ? (
         <Loader />
       ) : (
-        <HeroesCardsContainer heroesData={heroesData} />
+        <>
+          <SectionTitle title="Heroes" />
+          <HeroesCardsContainer heroesData={heroesData} />
+        </>
       )}
     </motion.main>
   );

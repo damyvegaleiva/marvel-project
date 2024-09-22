@@ -1,26 +1,37 @@
 import { useEffect, useState } from "react";
-import { MarvelApiResponse } from "../types/types";
 import { BASE_URL } from "../config/config";
 
-const useFetch = <T,>(API_REQUEST: string) => {
-  const [data, setData] = useState<MarvelApiResponse<T> | null>(null);
+type Data<T> = T | null;
+type ErrorType = Error | null;
+
+type TFetchHookResult<T> = {
+  data: Data<T>;
+  isLoading: boolean;
+  error: ErrorType;
+};
+
+const useFetch = <T,>(API_REQUEST: string): TFetchHookResult<T> => {
+  const [data, setData] = useState<Data<T>>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [error, setError] = useState<ErrorType>(null);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     setIsLoading(true);
 
-    const fetchData = async (): Promise<void> => {
+    const fetchData = async () => {
       try {
-        const request: Response = await fetch(BASE_URL + API_REQUEST);
+        const request = await fetch(BASE_URL + API_REQUEST, controller);
 
         if (!request.ok) {
           throw new Error(`Error ${request.status}: ${request.statusText}`);
         }
 
-        const response: MarvelApiResponse<T> = await request.json();
+        const response: T = await request.json();
 
         setData(response);
+        setError(null);
       } catch (error) {
         setError(error as Error);
       } finally {
@@ -31,6 +42,10 @@ const useFetch = <T,>(API_REQUEST: string) => {
     };
 
     fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, [API_REQUEST]);
 
   return { data, isLoading, error };

@@ -22,7 +22,9 @@ const useFetch = <T,>(API_REQUEST: string): TFetchHookResult<T> => {
 
     const fetchData = async () => {
       try {
-        const request = await fetch(BASE_URL + API_REQUEST, controller);
+        const request = await fetch(BASE_URL + API_REQUEST, {
+          signal: controller.signal,
+        });
 
         if (!request.ok) {
           throw new Error(`Error ${request.status}: ${request.statusText}`);

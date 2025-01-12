@@ -1,11 +1,11 @@
-type THeroImageProps = {
-  heroName: string;
+type TCharacterImageProps = {
+  characterName: string;
   thumbnailUrl: string;
   thumbnailExt: string;
 };
 
-const HeroImage: React.FC<THeroImageProps> = ({
-  heroName,
+const CharacterImage: React.FC<TCharacterImageProps> = ({
+  characterName,
   thumbnailUrl,
   thumbnailExt,
 }) => {
@@ -13,13 +13,13 @@ const HeroImage: React.FC<THeroImageProps> = ({
     <img
       src={
         thumbnailUrl.includes("not_available") || thumbnailExt === "gif"
-          ? "/not-image-hero.jpg"
+          ? "/not-image-character.jpg"
           : `${thumbnailUrl}.${thumbnailExt}`
       }
-      alt={`${heroName} image`}
+      alt={`${characterName} image`}
       className="w-[150px] h-[150px] border-[3px] rounded-[60%]"
     />
   );
 };
 
-export default HeroImage;
+export default CharacterImage;

@@ -1,19 +1,19 @@
 import { useNavigate } from "react-router-dom";
 
-type THeroButtonProps = {
-  heroId: number;
+type TCharacterButtonProps = {
+  characterId: number;
 };
 
-const HeroButton: React.FC<THeroButtonProps> = ({ heroId }) => {
+const CharacterButton: React.FC<TCharacterButtonProps> = ({ characterId }) => {
   const navigate = useNavigate();
   return (
     <button
       className="px-10 py-1 text-xs font-bold tracking-wide text-white duration-500 border-2 border-white rounded-lg font-marvel bg-marvelRed lg:border-black lg:hover:border-white"
-      onClick={() => navigate(`/characters/${heroId}`)}
+      onClick={() => navigate(`/character/${characterId}`)}
     >
       MORE
     </button>
   );
 };
 
-export default HeroButton;
+export default CharacterButton;

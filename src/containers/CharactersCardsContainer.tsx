@@ -1,23 +1,23 @@
 import { Character } from "../types/types";
-import HeroCard from "../components/HeroCard/HeroCard";
+import CharacterCard from "../components/CharacterCard/CharacterCard";
 import PaginationButton from "../components/PaginationButton";
 
-type THeroesCardsContainerProps = {
-  heroesData: Character[] | undefined;
+type TCharactersCardsContainerProps = {
+  charactersData: Character[] | undefined;
   offsetValue: number;
   handleClick: (action: string) => void;
 };
 
-const HeroesCardsContainer: React.FC<THeroesCardsContainerProps> = ({
-  heroesData,
+const CharactersCardsContainer: React.FC<TCharactersCardsContainerProps> = ({
+  charactersData,
   offsetValue,
   handleClick,
 }) => {
   return (
     <section>
       <div className="grid gap-10 mt-10 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] lg:mx-auto lg:w-[60%]">
-        {heroesData?.map((hero) => (
-          <HeroCard key={hero.id} hero={hero} />
+        {charactersData?.map((character) => (
+          <CharacterCard key={character.id} character={character} />
         ))}
       </div>
 
@@ -26,4 +26,4 @@ const HeroesCardsContainer: React.FC<THeroesCardsContainerProps> = ({
   );
 };
 
-export default HeroesCardsContainer;
+export default CharactersCardsContainer;

@@ -1,20 +1,22 @@
-type THeroTextProps = {
-  heroDescription: string;
+type TCharacterTextProps = {
+  characterDescription: string;
 };
 
 const truncateText = (text: string, maxLength: number): string => {
   return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 };
 
-const HeroText: React.FC<THeroTextProps> = ({ heroDescription }) => {
+const CharacterText: React.FC<TCharacterTextProps> = ({
+  characterDescription,
+}) => {
   return (
     <p className="flex-grow text-xl text-white font-marvel font-[700] italic px-10">
       {truncateText(
-        heroDescription || "This hero doesn't like descriptions.",
+        characterDescription || "This hero doesn't like descriptions.",
         50
       )}
     </p>
   );
 };
 
-export default HeroText;
+export default CharacterText;

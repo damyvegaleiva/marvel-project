@@ -1,13 +1,20 @@
+const MARVEL_API_KEY = import.meta.env.VITE_MARVEL_API_KEY;
+const MARVEL_API_HASH = import.meta.env.VITE_MARVEL_API_HASH;
+
 const BASE_URL = "https://gateway.marvel.com:443/v1/public/";
 
-const HEROES_ALL_URL = (offsetValue: number) =>
-  `characters?&ts=1&apikey=${import.meta.env.VITE_MARVEL_API_KEY}&hash=${
-    import.meta.env.VITE_MARVEL_API_HASH
-  }&limit=20&offset=${offsetValue}`;
+const CHARACTERS_ALL_URL = (offsetValue: number) =>
+  `characters?&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}&limit=20&offset=${offsetValue}`;
 
-const HEROES_SEARCH_URL = (characterValue: string | undefined) =>
-  `characters?name=${characterValue}&ts=1&apikey=${
-    import.meta.env.VITE_MARVEL_API_KEY
-  }&hash=${import.meta.env.VITE_MARVEL_API_HASH}`;
+const CHARACTER_SEARCH_URL = (characterValue: string | undefined) =>
+  `characters?name=${characterValue}&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}`;
 
-export { BASE_URL, HEROES_SEARCH_URL, HEROES_ALL_URL };
+const CHARACTER_DETAIL_URL = (heroId: string | undefined) =>
+  `characters/${heroId}?&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}`;
+
+export {
+  BASE_URL,
+  CHARACTER_SEARCH_URL,
+  CHARACTERS_ALL_URL,
+  CHARACTER_DETAIL_URL,
+};

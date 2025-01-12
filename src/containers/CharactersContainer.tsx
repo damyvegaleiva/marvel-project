@@ -1,19 +1,19 @@
-import { motion } from "framer-motion";
-import { HEROES_ALL_URL } from "../config/config";
 import useFetch from "../hooks/useFetch";
-import Loader from "../components/Loader";
-import SectionTitle from "../components/SectionTitle";
-import HeroesCardsContainer from "./HeroesCardsContainer";
-import { useState } from "react";
+import { CHARACTERS_ALL_URL } from "../config/config";
 import { Character, MarvelApiResponse } from "../types/types";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import SectionTitle from "../components/SectionTitle";
+import Loader from "../components/Loader";
+import CharactersCardsContainer from "./CharactersCardsContainer";
 
-const HeroesContainer = () => {
+const CharactersContainer = () => {
   const [offsetValue, setOffsetValue] = useState<number>(0);
   const { data, isLoading } = useFetch<MarvelApiResponse<Character>>(
-    HEROES_ALL_URL(offsetValue)
+    CHARACTERS_ALL_URL(offsetValue)
   );
 
-  const heroesData = data?.data.results ?? [];
+  const charactersData = data?.data.results ?? [];
 
   const handleClick = (action: string) => {
     if (action === "more") return setOffsetValue((prev) => prev + 20);
@@ -23,14 +23,14 @@ const HeroesContainer = () => {
 
   return (
     <motion.main className="mb-20">
-      <SectionTitle title="Heroes" />
+      <SectionTitle title="Characters" />
 
       {isLoading ? (
         <Loader />
       ) : (
         <>
-          <HeroesCardsContainer
-            heroesData={heroesData}
+          <CharactersCardsContainer
+            charactersData={charactersData}
             offsetValue={offsetValue}
             handleClick={handleClick}
           />
@@ -40,4 +40,4 @@ const HeroesContainer = () => {
   );
 };
 
-export default HeroesContainer;
+export default CharactersContainer;

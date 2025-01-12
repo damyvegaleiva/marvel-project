@@ -3,6 +3,7 @@ import HeaderContainer from "./containers/HeaderContainer";
 import HomeContainer from "./containers/HomeContainer";
 import CharactersContainer from "./containers/CharactersContainer";
 import FooterContainer from "./containers/FooterContainer";
+import CharacterDetailContainer from "./containers/CharacterDetailContainer";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeContainer />} />
           <Route path="/characters" element={<CharactersContainer />} />
-          <Route path="/character/:id" />
+          <Route path="/character/:id" element={<CharacterDetailContainer />} />
         </Routes>
 
         <FooterContainer />

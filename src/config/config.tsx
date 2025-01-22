@@ -7,7 +7,7 @@ const CHARACTERS_ALL_URL = (offsetValue: number) =>
   `characters?&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}&limit=20&offset=${offsetValue}`;
 
 const CHARACTER_SEARCH_URL = (characterValue: string | undefined) =>
-  `characters?name=${characterValue}&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}`;
+  `characters?nameStartsWith=${characterValue}&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}`;
 
 const CHARACTER_DETAIL_URL = (characterId: string | undefined) =>
   `characters/${characterId}?&ts=1&apikey=${MARVEL_API_KEY}&hash=${MARVEL_API_HASH}`;

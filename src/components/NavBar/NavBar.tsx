@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import BurgerButton from "./BurgerButton";
 import NavList from "./NavList";
+import SearchBox from "./SearchBox";
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -25,6 +26,7 @@ const NavBar: React.FC = () => {
       <BurgerButton handleClick={handleClick} isOpen={isOpen} />
 
       <NavList isOpen={isOpen} />
+      <SearchBox />
     </nav>
   );
 };
